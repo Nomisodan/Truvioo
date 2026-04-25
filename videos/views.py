@@ -25,9 +25,6 @@ class GetUploadURLView(APIView):
         }
         
         response = requests.post(url, headers=headers, json=data)
-        print("Status code:", response.status_code)
-        print("Cloudflare response:", response.json())
-        
         result = response.json()
         
         if response.status_code == 200:
