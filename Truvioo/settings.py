@@ -25,9 +25,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'users',
     'videos',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -120,3 +122,4 @@ REST_FRAMEWORK = {
 
 CLOUDFLARE_ACCOUNT_ID = os.getenv('CLOUDFLARE_ACCOUNT_ID')
 CLOUDFLARE_API_TOKEN = os.getenv('CLOUDFLARE_API_TOKEN')
+CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
